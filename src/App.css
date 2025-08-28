@@ -1,38 +1,207 @@
-.App {
+/* Global styles */
+body {
+  background-color: #f0f0f0; /* Light gray background for the entire app */
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Ensure full height layout for footer to stick at bottom */
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Main content area */
+main {
+  flex: 1 0 auto; /* Ensures main content takes available space */
+}
+
+/* Container styles for all pages */
+.container {
+  max-width: 800px; /* Responsive max-width */
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 8px; /* Rounded corners for containers */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Navbar customizations */
+.navbar {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Shadow for navbar */
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Space between icon and text */
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #17a2b8 !important; /* Bootstrap info color on hover */
+}
+
+/* User ID styling in navbar */
+.navbar .nav-item.text-white {
+  font-size: 0.9rem;
+  padding: 0 10px;
+}
+
+/* Footer styles */
+footer {
+  flex-shrink: 0; /* Prevent footer from shrinking */
+  padding: 15px 0;
+  background-color: #343a40; /* Matches navbar dark theme */
+  color: #ffffff;
+  font-size: 0.9rem;
+}
+
+footer p {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* Space for footer icon */
+}
+
+/* Page-specific background colors */
+.container.home-container {
+  background-color: #f8f9fa; /* Light gray for Home */
+}
+
+.container.login-container,
+.container.signup-container {
+  background-color: #e9ecef; /* Lighter gray for Login and Signup */
+}
+
+.container.create-container {
+  background-color: #d4edda; /* Light green for Create */
+}
+
+.container.update-container {
+  background-color: #fff3cd; /* Light yellow for Update */
+}
+
+.container.delete-container {
+  background-color: #f8d7da; /* Light red for Delete */
+}
+
+.fa-icon {
+  vertical-align: middle;
+  color: var(--neutral); /* Beige for icons */
+}
+
+/* Form styles */
+form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-control, .form-select {
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+  transition: border-color 0.3s ease;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: #007bff; /* Bootstrap primary color */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: 500;
+  width: auto; /* Ensure buttons don't stretch unnecessarily */
+}
+
+/* Employee list table styles */
+.table {
+  background-color: #ffffff; /* White background for table */
+  border-radius: 8px;
+  overflow: hidden; /* Ensure rounded corners apply */
+}
+
+.table th {
+  background-color: #343a40; /* Dark header to match navbar/footer */
+  color: #ffffff;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.table td {
+  vertical-align: middle; /* Center content vertically */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.table .fa-icon {
+  margin-right: 5px; /* Space between icon and text in headers */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+/* Modal popup styling for ProtectedRoute */
+.modal-content {
+  border-radius: 8px;
+}
+
+.modal-header {
+  background-color: #007bff; /* Bootstrap primary blue */
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.modal-footer .btn {
+  min-width: 100px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+    margin: 10px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+
+  .nav-link {
+    font-size: 0.9rem;
+  }
+
+  .form-group {
+    margin-bottom: 1rem;
+  }
+
+  .btn {
+    width: 100%; /* Full-width buttons on small screens */
+  }
+
+  .table {
+    font-size: 0.9rem; /* Smaller text for tables on mobile */
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 10px;
+  }
+
+  footer {
+    font-size: 0.8rem;
+  }
+
+  h2 {
+    font-size: 1.5rem; /* Smaller headings on mobile */
+  }
+
+  .table {
+    font-size: 0.8rem; /* Further reduce table text on small screens */
   }
 }
