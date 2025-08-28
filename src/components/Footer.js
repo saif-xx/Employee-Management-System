@@ -1,29 +1,30 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
-import { FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import { faCopyright} from '@fortawesome/free-solid-svg-icons';
+import { Container, Row, Col } from 'react-bootstrap';
 import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <footer className="bg-dark text-white text-center py-3 mt-auto">
+   <footer className="bg-dark text-white text-center py-3 mt-auto">
       <Container>
-        <p>
-          <FontAwesomeIcon icon={faCopyright} className="me-1" />
-          2025 Employee Management System. All rights reserved.
-          <p>
+        <Row>
+          <Col>
+            <p>&copy; 2025 Employee Management System. All rights reserved.</p>
+            <p>
               <FaEnvelope className="me-1" /> Contact:{' '}
               <a href="mailto:saifnaikwade03@gmail.com" className="text-neutral">
                 saifnaikwade03@gmail.com
               </a>
             </p>
+            <div>
               <a href="https://github.com/saif-xx" className="text-neutral mx-2">
                 <FaGithub className="me-1" /> GitHub
               </a>
               <a href="https://www.linkedin.com/in/saif-naikwade-11b2a624a/.com" className="text-neutral mx-2">
                 <FaLinkedin className="me-1" /> LinkeDin
               </a>
-        </p> 
+            </div>
+          </Col>
+        </Row>
       </Container>
     </footer>
   );
